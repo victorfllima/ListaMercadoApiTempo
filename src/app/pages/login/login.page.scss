@@ -1,0 +1,24 @@
+.container{
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  width: 75%;
+  margin: 0 auto;
+
+  &.top{
+    top: 5%;
+  }
+
+  &.bottom{
+    bottom: 35%;
+  }
+}
+
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
