@@ -10,9 +10,9 @@
          <ion-input placeholder="Email" type="email"></ion-input>
          <ion-input placeholder="Senha" type="password"></ion-input>
          <ion-input placeholder="Confirmar senha" type="password"></ion-input>
-         <ion-button expand="block" color="primary">Criar conta</ion-button>
+         <ion-button expand="block" color="primary" (click)="cadastro()">Criar conta</ion-button>
          <ion-text color="secondary" class="ion-text-center"><h5>Ja tenho conta</h5></ion-text>
-         <ion-button expand="block" color="primary" fill="clear">Voltar para login</ion-button>
+         <ion-button expand="block" color="primary" fill="clear"(click)="login()">Voltar para login</ion-button>
        </ion-card-content>
      </ion-card>
   </div>

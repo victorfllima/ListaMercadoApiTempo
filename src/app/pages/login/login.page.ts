@@ -1,5 +1,5 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +8,15 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  entrar(){
-    console.log('Entrar');
-    this.navCtrl.navigateRoot('./cadastro.page');
+  login(){
+    this.router.navigate(['home']);
   }
-
+  cadastro(){
+    this.router.navigate(['cadastro']);
+  }
 }

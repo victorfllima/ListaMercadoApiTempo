@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController, AlertController, ToastController } from '@ionic/angular';
 
@@ -8,7 +9,8 @@ import { ActionSheetController, AlertController, ToastController } from '@ionic/
 })
 export class HomePage implements OnInit {
 tasks: any [] = [];
-  constructor(private alertCtrl: AlertController, private toastCtrl: ToastController, private actionSheetCtrl: ActionSheetController) {
+  // eslint-disable-next-line max-len
+  constructor(private alertCtrl: AlertController, private toastCtrl: ToastController, private actionSheetCtrl: ActionSheetController, private router: Router) {
     // eslint-disable-next-line prefer-const
     let taskJson = localStorage.getItem('taskDb');
 
@@ -66,7 +68,7 @@ tasks: any [] = [];
       return;
     }
 
-    let task = {name: newTask, done: false};
+    const task = {name: newTask, done: false};
 
     this.tasks.push(task);
     this.updateLocalStorage();
@@ -98,8 +100,13 @@ tasks: any [] = [];
     await actionSheet.present();
   }
   delete(task: any){
+    // eslint-disable-next-line eqeqeq
     this.tasks = this.tasks.filter(taskArray=> task != taskArray);
 
     this.updateLocalStorage();
+  }
+  clima(){
+    this.router.navigate(['clima']);
+
   }
 }
